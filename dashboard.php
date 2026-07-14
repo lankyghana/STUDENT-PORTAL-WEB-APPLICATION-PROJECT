@@ -111,14 +111,19 @@ $hasFilters = $filterName !== '' || $filterStatus !== '' || $filterGender !== ''
 
     <!-- ==================== Records table ==================== -->
     <?php if ($students): ?>
+        <div class="table-wrap">
         <table class="records">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone Number</th>
+                    <th>Date of Birth</th>
                     <th>Gender</th>
+                    <th>Address</th>
                     <th>State of Origin</th>
+                    <th>Local Government</th>
+                    <th>Next of Kin</th>
                     <th>JAMB Score</th>
                     <th>Admission Status</th>
                     <th>Action</th>
@@ -141,8 +146,12 @@ $hasFilters = $filterName !== '' || $filterStatus !== '' || $filterGender !== ''
                         </td>
                         <td><?= e($s['email']) ?></td>
                         <td><?= e($s['phone_number']) ?></td>
+                        <td><?= e($s['date_of_birth']) ?></td>
                         <td><?= e($s['gender']) ?></td>
+                        <td><?= e($s['address']) ?></td>
                         <td><?= e($s['state_of_origin']) ?></td>
+                        <td><?= e($s['local_government']) ?></td>
+                        <td><?= e($s['next_of_kin']) ?></td>
                         <td><?= e((string) $s['jamb_score']) ?></td>
                         <td>
                             <span class="badge <?= $s['admission_status'] === 'Admitted' ? 'badge-admitted' : 'badge-undecided' ?>">
@@ -156,6 +165,7 @@ $hasFilters = $filterName !== '' || $filterStatus !== '' || $filterGender !== ''
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
     <?php else: ?>
         <div class="card empty-state">
             <div class="icon">📭</div>

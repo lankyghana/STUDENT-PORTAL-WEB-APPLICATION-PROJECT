@@ -237,14 +237,22 @@ a { color: var(--primary); text-decoration: none; }
 
 .filter-bar .form-group { min-width: 160px; flex: 1; }
 
+.table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
 table.records {
     width: 100%;
     border-collapse: collapse;
     background: var(--card);
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow);
 }
+
+table.records th,
+table.records td { white-space: nowrap; }
 
 table.records th {
     background: var(--primary);
